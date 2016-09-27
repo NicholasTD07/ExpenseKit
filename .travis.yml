@@ -1,6 +1,9 @@
 language: objective-c
 osx_image: xcode8
-test:
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
   - swift test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
