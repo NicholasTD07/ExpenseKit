@@ -4,6 +4,8 @@ script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - swift test
+  # - swift test
+  - swift package generate-xcodeproj --enable-code-coverage
+  - xcodebuild -scheme ExpenseKit -enableCodeCoverage YES test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
