@@ -39,11 +39,14 @@ struct Budget: ExpenseKit.Budget {
     }
 }
 
-var budget = Budget(amount: 100) // amount: 100, spent: 0, left: 100
+var budget = Budget(amount: 100)
+// amount: 100, spent: 0, left: 100
 
-budget.expenses.append(Expense(spent: 10)) // amount: 100, spent: 10, left: 90
+budget.expenses.append(Expense(spent: 10))
+// amount: 100, spent: 10, left: 90
 
-budget.expenses.append(Expense(spent: 20)) // amount: 100, spent: 30, left: 70
+budget.expenses.append(Expense(spent: 20))
+// amount: 100, spent: 30, left: 70
 ```
 
 ## License
