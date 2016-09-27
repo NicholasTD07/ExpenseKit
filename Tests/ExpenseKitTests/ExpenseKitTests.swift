@@ -2,11 +2,11 @@ import XCTest
 import ExpenseKit
 
 class ExpenseKitTests: XCTestCase {
-    struct Expense: ExpenseType {
+    struct Expense: ExpenseKit.Expense {
         let spent: Value
     }
 
-    struct Budget: BudgetType {
+    struct Budget: ExpenseKit.Budget {
         let amount: Value
         var expenses: [Expense] = []
 

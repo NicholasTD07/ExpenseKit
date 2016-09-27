@@ -1,16 +1,16 @@
 public typealias Value = Double
 
-public protocol ExpenseType {
+public protocol Expense {
     var spent: Value { get }
 }
 
-public protocol BudgetType {
-    associatedtype Expense
+public protocol Budget {
+    associatedtype ExpenseType
     var amount: Value { get }
-    var expenses: [Expense] { get }
+    var expenses: [ExpenseType] { get }
 }
 
-public extension BudgetType where Self.Expense: ExpenseType {
+public extension Budget where Self.ExpenseType: Expense {
     var spent: Value {
         return expenses.reduce(0) { sum, expense in sum + expense.spent  }
     }
