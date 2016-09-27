@@ -9,13 +9,17 @@ Protocol oriented kit for managing expense and budget in Swift 3
 
 ExpenseKit provides two protocols, `Expanse` and `Budget`.
 
-`Expense` requires a `spent` instance variable, while `Budget` requires two, an `amount` and also `expenses` which is an array of "Expenses".
+`Expense` requires a `spent` instance variable, while `Budget` requires two, i.e. an `amount` and also `expenses` which is an array of "Expenses".
 
 ExpenseKit also provides an extension on `Budget` when elements in a `Budget`'s `expenses` array conforms to `Expense` protocol.
 This extension on `Budget` has two computed variables:
 
 - `spent`, which is the sum of all the `expense`'s `spent` (money)
 - `left`, which is what's left in the `budget` (`budget.amount - budget.spent`) 
+
+### NB
+
+As of now, all the value variables, i.e. `amount`, `spent`, and `left` are of type `Value` which is an typealias for `Double`.
 
 ## Example Usage
 
