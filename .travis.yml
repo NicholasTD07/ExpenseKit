@@ -6,6 +6,6 @@ script:
   - xcodebuild -showsdks
   # - swift test
   - swift package generate-xcodeproj --enable-code-coverage
-  - xcodebuild -scheme ExpenseKit -enableCodeCoverage YES test
+  - xcodebuild -scheme ExpenseKit -enableCodeCoverage YES test | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
