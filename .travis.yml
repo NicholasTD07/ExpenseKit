@@ -6,4 +6,4 @@ script:
   - xcodebuild -showsdks
   - swift test
 after_success:
-  - bash <(curl -s https://raw.githubusercontent.com/codecov/codecov-bash/feature/swift/package_detection/codecov)
+  - bash <(curl -s https://codecov.io/bash)
